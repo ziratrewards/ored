@@ -1,3 +1,3 @@
 export const enviroment = {
-    api_base: "https://kw.oredo-back.xyz"
+    api_base: "https://ored.khazalah.online"
 }
