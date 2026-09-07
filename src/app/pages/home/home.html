@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-[#F5F6F8] flex justify-center">
-  <div class="w-full max-w-[836px] flex flex-col md:flex-row md:gap-6">
+  <div class="w-full max-w-209 flex flex-col md:flex-row md:gap-6">
   <!-- Main Content Area (Left column on desktop LTR) -->
   <main dir="rtl" class="flex-1 flex flex-col bg-[#F5F6F8] min-h-screen relative overflow-y-auto">
     <!-- Workspace Header (Full width of left column) -->
@@ -29,7 +29,7 @@
       <!-- If active tab is 'pay' (matches image) -->
       @if (activeTab() === 'pay') {
       <div
-        class="w-full max-w-lg bg-white rounded-[24px] border border-gray-100 shadow-xl shadow-gray-100/40 p-6 flex flex-col gap-6 transition-all duration-300">
+        class="w-full max-w-lg bg-white rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/40 p-6 flex flex-col gap-6 transition-all duration-300">
 
         <!-- Bulk Checkbox & Add Row Control -->
         <div class="flex items-center justify-between py-1 px-1">
@@ -148,7 +148,7 @@
                   <app-input [label]="'رمز القسيمة'" [placeholder]="'رمز القسيمة'" [value]="voucherCode()"
                     [required]="true" (valueChange)="voucherCode.set($event)"></app-input>
                 </div>
-                <app-button [variant]="'secondary'" [disabled]="!voucherCode()" class="h-[46px]">
+                <app-button [variant]="'secondary'" [disabled]="!voucherCode()" class="h-11.5">
                   تطبيق
                 </app-button>
               </div>
@@ -157,7 +157,7 @@
         </div>
 
         <!-- Payment Button Footer -->
-        <div class="fixed bottom-16 left-0 right-0 z-20 bg-white rounded-t-[24px] border-t border-gray-100 p-4 shadow-[0_-8px_20px_rgba(0,0,0,0.03)] md:relative md:bottom-0 md:bg-transparent md:border-t-0 md:p-0 md:shadow-none md:rounded-t-none mt-4">
+        <div class="fixed bottom-16 left-0 right-0 z-20 bg-white rounded-t-3xl border-t border-gray-100 p-4 shadow-[0_-8px_20px_rgba(0,0,0,0.03)] md:relative md:bottom-0 md:bg-transparent md:border-t-0 md:p-0 md:shadow-none md:rounded-t-none mt-4">
           @if (totalSum() > 0) {
           <app-button (click)="onPay()" [variant]="'primary'" [fullWidth]="true" [size]="'lg'"
             [loading]="isLoading()"
@@ -182,7 +182,7 @@
       } @else {
       <!-- Placeholder views for other navigation tabs -->
       <div
-        class="w-full max-w-lg bg-white rounded-[24px] border border-gray-100 shadow-xl p-8 text-center transition-all duration-300">
+        class="w-full max-w-lg bg-white rounded-3xl border border-gray-100 shadow-xl p-8 text-center transition-all duration-300">
         <div class="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
           @if (activeTab() === 'home') {
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +221,7 @@
   </main>
 
   <!-- Sidebar Menu (Visible on desktop only, Right column on desktop LTR) -->
-  <aside dir="rtl" class="hidden md:block w-[300px] bg-white border-l border-gray-100 h-screen sticky top-0 shrink-0">
+  <aside dir="rtl" class="hidden md:block w-75 bg-white border-l border-gray-100 h-screen sticky top-0 shrink-0">
     <app-sidebar [activeItem]="activeTab()" (navigate)="onNavigate($event)"></app-sidebar>
   </aside>
 
